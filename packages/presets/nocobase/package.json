@@ -5,6 +5,7 @@
   "main": "./lib/server/index.js",
   "dependencies": {
     "@formily/json-schema": "2.x",
+
     "@nocobase/plugin-acl": "1.8.17",
     "@nocobase/plugin-action-bulk-edit": "1.8.17",
     "@nocobase/plugin-action-bulk-update": "1.8.17",
@@ -84,6 +85,7 @@
     "@nocobase/plugin-workflow-response-message": "1.8.17",
     "@nocobase/plugin-workflow-sql": "1.8.17",
     "@nocobase/server": "1.8.17",
+
     "cronstrue": "^2.11.0",
     "fs-extra": "^11.1.1"
   },
@@ -113,6 +115,10 @@
     "@nocobase/plugin-collection-tree",
     "@nocobase/plugin-data-source-main",
     "@nocobase/plugin-data-source-manager",
+    "@nocobase/plugin-data-source-sqlserver",
+    "@nocobase/plugin-data-source-mysql",
+    "@nocobase/plugin-data-source-oracle",
+    "@nocobase/plugin-data-source-postgresql",
     "@nocobase/plugin-data-visualization",
     "@nocobase/plugin-environment-variables",
     "@nocobase/plugin-error-handler",
