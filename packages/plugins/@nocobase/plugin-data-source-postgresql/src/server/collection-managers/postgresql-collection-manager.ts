@@ -17,10 +17,10 @@ import {
   IRepository,
   MergeOptions,
 } from '@nocobase/data-source-manager';
-import { SqlServerRepository } from '../repositories/sql-server-repository';
+import { PostgreSqlRepository } from '../repositories/postgresql-repository';
 import { mapDataType } from '../utils/map-data-types';
 
-export class SqlServerCollectionManager implements ICollectionManager {
+export class PostgreSqlCollectionManager implements ICollectionManager {
   collections = new Map<string, ICollection>();
   repositories = new Map<string, IRepository>();
 
@@ -87,7 +87,7 @@ export class SqlServerCollectionManager implements ICollectionManager {
       return this.repositories.get(name);
     }
     const collection = this.getCollection(name);
-    const repository = new SqlServerRepository(collection, this);
+    const repository = new PostgreSqlRepository(collection, this);
     this.repositories.set(name, repository);
     return repository;
   }
