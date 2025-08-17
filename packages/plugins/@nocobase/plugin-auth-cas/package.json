@@ -1,0 +1,32 @@
+{
+  "name": "@nocobase/plugin-auth-cas",
+  "displayName": "Auth: CAS",
+  "displayName.zh-CN": "认证：CAS",
+  "description": "CAS authentication.",
+  "description.zh-CN": "通过 CAS 认证身份。",
+  "version": "1.8.17",
+  "main": "./dist/server/index.js",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "@formily/react": "2.x",
+    "antd": "5.x",
+    "react": "18.x",
+    "react-i18next": "^11.15.1",
+    "@types/passport": "^1.0.16"
+  },
+  "peerDependencies": {
+    "@nocobase/actions": "1.x",
+    "@nocobase/auth": "1.x",
+    "@nocobase/client": "1.x",
+    "@nocobase/database": "1.x",
+    "@nocobase/plugin-auth": ">=0.17.0-alpha.7",
+    "@nocobase/server": "1.x",
+    "@nocobase/test": "1.x",
+    "passport": "^0.7.0",
+    "@rula/passport-cas": "^1.0.0"
+  },
+  "keywords": [
+    "Authentication",
+    "CAS"
+  ]
+}
