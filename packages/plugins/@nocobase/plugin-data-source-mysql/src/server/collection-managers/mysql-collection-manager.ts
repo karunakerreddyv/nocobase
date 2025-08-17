@@ -8,6 +8,7 @@
  */
 
 import {
+
   Collection,
   CollectionOptions,
   DataSource,
@@ -57,7 +58,9 @@ export class MySqlCollectionManager implements ICollectionManager {
     if (this.collections.has(name)) {
       throw new Error(`Collection ${name} already exists`);
     }
+
     const collection = new Collection(options, this);
+
     this.collections.set(name, collection);
     return collection;
   }

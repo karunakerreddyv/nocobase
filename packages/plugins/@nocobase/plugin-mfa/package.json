@@ -1,0 +1,34 @@
+{
+  "name": "@nocobase/plugin-mfa",
+  "displayName": "Auth: Multi-Factor Authentication",
+  "displayName.zh-CN": "认证：多因素认证",
+  "description": "Multi-Factor Authentication (MFA) for NocoBase.",
+  "description.zh-CN": "为 NocoBase 提供多因素认证（MFA）。",
+  "version": "1.8.17",
+  "main": "./dist/server/index.js",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "@formily/react": "2.x",
+    "antd": "5.x",
+    "react": "18.x",
+    "react-i18next": "^11.15.1",
+    "@types/qrcode": "^1.5.0"
+  },
+  "peerDependencies": {
+    "@nocobase/actions": "1.x",
+    "@nocobase/auth": "1.x",
+    "@nocobase/client": "1.x",
+    "@nocobase/database": "1.x",
+    "@nocobase/plugin-auth": ">=0.17.0-alpha.7",
+    "@nocobase/plugin-verification": "1.x",
+    "@nocobase/server": "1.x",
+    "@nocobase/test": "1.x",
+    "otplib": "^12.0.1",
+    "qrcode": "^1.5.3"
+  },
+  "keywords": [
+    "Authentication",
+    "MFA",
+    "2FA"
+  ]
+}

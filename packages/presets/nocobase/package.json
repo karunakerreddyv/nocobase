@@ -1,10 +1,11 @@
 {
   "name": "@nocobase/preset-nocobase",
-  "version": "1.8.15",
+  "version": "1.8.17",
   "license": "AGPL-3.0",
   "main": "./lib/server/index.js",
   "dependencies": {
     "@formily/json-schema": "2.x",
+
     "@nocobase/plugin-acl": "1.8.15",
     "@nocobase/plugin-action-bulk-edit": "1.8.15",
     "@nocobase/plugin-action-bulk-update": "1.8.15",
@@ -88,6 +89,8 @@
     "@nocobase/plugin-workflow-response-message": "1.8.15",
     "@nocobase/plugin-workflow-sql": "1.8.15",
     "@nocobase/server": "1.8.15",
+    @nocobase/plugin-echarts,
+
     "cronstrue": "^2.11.0",
     "fs-extra": "^11.1.1"
   },
@@ -122,6 +125,7 @@
     "@nocobase/plugin-data-source-oracle",
     "@nocobase/plugin-data-source-postgresql",
     "@nocobase/plugin-data-visualization",
+    "@nocobase/plugin-echarts",
     "@nocobase/plugin-environment-variables",
     "@nocobase/plugin-error-handler",
     "@nocobase/plugin-field-formula",
