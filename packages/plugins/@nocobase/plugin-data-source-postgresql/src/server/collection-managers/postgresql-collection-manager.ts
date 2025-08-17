@@ -8,6 +8,9 @@
  */
 
 import {
+
+  Collection,
+
   CollectionOptions,
   DataSource,
   ICollection,
@@ -56,10 +59,14 @@ export class PostgreSqlCollectionManager implements ICollectionManager {
     if (this.collections.has(name)) {
       throw new Error(`Collection ${name} already exists`);
     }
+
+    const collection = new Collection(options, this);
+/*
     const collection = {
       name,
       options,
     } as ICollection;
+*/
     this.collections.set(name, collection);
     return collection;
   }

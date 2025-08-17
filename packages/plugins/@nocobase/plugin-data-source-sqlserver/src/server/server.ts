@@ -1,15 +1,12 @@
 import { Plugin } from '@nocobase/server';
-import { DataSourceManager } from '@nocobase/data-source-manager';
+import { Database } from '@nocobase/database';
 import { SqlServerDataSource } from './data-sources/sql-server';
 import { SqlServerDialect } from './dialects/sql-server';
 
 export class PluginDataSourceSqlServerServer extends Plugin {
   async afterLoad() {
-    const dataSourceManager = this.app.getPlugin<DataSourceManager>('data-source-manager');
-    if (dataSourceManager) {
-      dataSourceManager.addDataSourceType('sqlserver', SqlServerDataSource);
-    }
-    this.app.db.registerDialect(SqlServerDialect);
+    this.app.dataSourceManager.registerDataSourceType('sqlserver', SqlServerDataSource);
+    Database.registerDialect(SqlServerDialect);
   }
 
   async load() {

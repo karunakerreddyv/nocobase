@@ -16,7 +16,9 @@ export class MySqlDataSource extends DataSource {
 
   static async testConnection(options) {
     const connection = await mysql.createConnection(options);
-    await connection.close();
+
+    await connection.end();
+
     return true;
   }
 

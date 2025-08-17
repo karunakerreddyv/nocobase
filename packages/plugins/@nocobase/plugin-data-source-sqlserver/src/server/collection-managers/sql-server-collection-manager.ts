@@ -8,6 +8,7 @@
  */
 
 import {
+  Collection,
   CollectionOptions,
   DataSource,
   ICollection,
@@ -56,10 +57,7 @@ export class SqlServerCollectionManager implements ICollectionManager {
     if (this.collections.has(name)) {
       throw new Error(`Collection ${name} already exists`);
     }
-    const collection = {
-      name,
-      options,
-    } as ICollection;
+    const collection = new Collection(options, this);
     this.collections.set(name, collection);
     return collection;
   }
