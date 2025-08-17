@@ -33,6 +33,7 @@
     "@nocobase/plugin-data-source-manager": "1.8.15",
     "@nocobase/plugin-data-visualization": "1.8.15",
     "@nocobase/plugin-departments": "1.8.15",
+    "@nocobase/plugin-email-manager": "0.1.0",
     "@nocobase/plugin-environment-variables": "1.8.15",
     "@nocobase/plugin-error-handler": "1.8.15",
     "@nocobase/plugin-field-attachment-url": "1.8.15",

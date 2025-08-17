@@ -1,0 +1,27 @@
+{
+  "name": "@nocobase/plugin-email-manager",
+  "version": "0.1.0",
+  "displayName": "Email Manager",
+  "displayName.zh-CN": "邮件管理器",
+  "description": "Provides email services.",
+  "description.zh-CN": "提供邮件服务。",
+  "license": "AGPL-3.0",
+  "main": "./dist/server/index.js",
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-i18next": "^11.15.1",
+    "supertest": "^6.1.6"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.1",
+    "@azure/msal-node": "^1.14.2",
+    "@microsoft/microsoft-graph-client": "^3.0.4"
+  },
+  "peerDependencies": {
+    "@nocobase/client": "1.x",
+    "@nocobase/database": "1.x",
+    "@nocobase/server": "1.x",
+    "@nocobase/test": "1.x",
+    "@nocobase/utils": "1.x"
+  }
+}
