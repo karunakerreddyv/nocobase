@@ -1,15 +1,27 @@
 import React from 'react';
 import { useAPIClient, useForm, Form, SchemaComponent } from '@nocobase/client';
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 
 export const VerifyMfa = (props) => {
-  const { userId } = props;
+  const { userId, closeModal } = props;
   const apiClient = useAPIClient();
   const form = useForm();
 
   const handleSubmit = async (values) => {
-    await apiClient.resource('mfa').verify({ ...values, userId });
-    // TODO: redirect to the home page
+    try {
+      const { data } = await apiClient.resource('mfa').verify({ ...values, userId });
+      // After successful verification, the server returns a new token.
+      // We need to update the token in the client.
+      apiClient.auth.setToken(data.token);
+      message.success('Verification successful');
+      if (closeModal) {
+        closeModal();
+      }
+      // Reload the page to get the new user state
+      window.location.reload();
+    } catch (error) {
+      message.error('Invalid verification code');
+    }
   };
 
   const schema = {

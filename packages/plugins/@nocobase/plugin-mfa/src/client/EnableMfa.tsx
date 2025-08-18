@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useAPIClient, useForm, Form, SchemaComponent } from '@nocobase/client';
-import { Button, Spin, Alert, Typography } from 'antd';
+import { Button, Spin, Alert, Typography, message } from 'antd';
 
 const { Paragraph } = Typography;
 
-export const EnableMfa = () => {
+export const EnableMfa = (props) => {
+  const { closeModal } = props;
   const [loading, setLoading] = useState(true);
   const [secret, setSecret] = useState(null);
   const apiClient = useAPIClient();
@@ -14,12 +15,22 @@ export const EnableMfa = () => {
     apiClient.resource('mfa').generateSecret().then(({ data }) => {
       setSecret(data.data);
       setLoading(false);
+    }).catch(error => {
+      message.error('Failed to generate MFA secret');
+      setLoading(false);
     });
   }, []);
 
   const handleSubmit = async (values) => {
-    await apiClient.resource('mfa').enable({ ...values, secret: secret.secret });
-    // TODO: show success message and close modal
+    try {
+      await apiClient.resource('mfa').enable({ ...values, secret: secret.secret });
+      message.success('MFA enabled successfully');
+      if (closeModal) {
+        closeModal();
+      }
+    } catch (error) {
+      message.error('Failed to enable MFA');
+    }
   };
 
   if (loading) {

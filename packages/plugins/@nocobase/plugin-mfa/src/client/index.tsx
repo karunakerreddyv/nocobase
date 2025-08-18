@@ -12,10 +12,10 @@ export class PluginMfaClient extends Plugin {
           const { userId } = error.response.data.data;
           const modal = Modal.info({
             title: 'Two-Factor Authentication Required',
-            content: <VerifyMfa userId={userId} />,
+            content: <VerifyMfa userId={userId} closeModal={() => modal.destroy()} />,
             okButtonProps: { style: { display: 'none' } },
+            closable: true,
           });
-          // TODO: how to close the modal after successful verification?
         }
         return Promise.reject(error);
       },
